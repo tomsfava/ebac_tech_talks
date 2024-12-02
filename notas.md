@@ -34,3 +34,20 @@ por fim adicionamos opacidade 0.7 ao pseudo-elemento que criamos, finalizando o 
 agora vamos dar uma atenção a responsividade, primeiramente para telas de celular, notamos que o texto está muito grande, reduzmos o font-size para 22 e o line-height para 24, além de diminuir a margem vertical para 24px, o logo nós também reduzimos pela metade e o padding do hero em si nós também reduzimos para 40px na vertical, quanto a telas de tablet o professor achou que o design já estava adequado; 
 uma última alteração: vamos remover a regra da cor do texto do arquivo hero e vamos adicioná-la ao reset, já que branco é a cor principal de todos os textos do site;   
 até aqui vai o segundo commit;  
+### Aula 3 - Construa o cabeçalho
+#### **Sobre a aula**
+* compreender a estrutura e organização do cabeçalho da landing page;
+* dominar o uso de estilos CSS para o cabeçalho de acordo com o design especificado;
+* tornar o cabeçalho responsivo.
+#### **Anotações**
+vamos criar agora a barra com as informações do evento, localização, preço e data, além do link CTA;  
+ainda dentro do container, criamos a div .infos-bar, ela vai conter uma ul infos-bar__infos com 3 li infos-bar__infos__item;  
+para estilização criamos o novo arquivo _infos_bar.scss, dentro da pasta components dentro de styles, definimos o padding da div e sua cor de fundo, e definimos o display da ul para flex, além de um gap de 40px;  
+para os itens definimos o font-size e a cor preta, e a mesma coisa para os negritos dentro dos itens, além de definir o display block para esses;  
+agora vamos criar o botão, para sua estilização, dentro de components criamos o arquivo _buttons que vai conter uma regra geral para classe .button com o padding o font-size o font-weight e o text-decoration, e uma regra para o modificador --primary que vai ter a cor branca para o texto e a cor presente no figma para o fundo;  
+para alinhar o botão a lista de informações adicionamos display flex também para a div infos-bar, além do justify-content space-between;  
+agora vamos para a responsividade, quando selecionamos a tela de celular notamos que o conteúdo extrapola a div o que gera uma barra de rolagem lateral, para corrigir isso vamos estar quebrando os itens em linhas, fazemos isso editando as regras no media query de 640px, voltando o display para block, agora vamos aplicar uma margem entre os itens e colocar o botão para ocupar todo o container, fazemos isso com margem inferior para os itens, e criamos uma nova media query para os botões, definindo seu display para block, isso faz com que o link ocupe uma linha, porem para um button, isso não seria suficiente, seria necessário um width de 100%;  
+quanto ao botão, vamos também remover o comportamento de wrap na propriedade white-space com o valor nowrap;  
+ao fazermos isso o texto se descentralizou verticalmente, então aplicamos o display flex para o media até 1024px e configuramos align-itens para center;
+faltou somente diminuir o espaço entre os itens no caso do tablet, então na media apropriada definimos o gap para a ul (__infos) para 16px;  
+o terceiro commit vai até aqui;
