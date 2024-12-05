@@ -63,3 +63,14 @@ em seguida vamos ajustar os tamanhos e os espaçamentos de acordo com o figma;
 do figma também extraímos as cores do gradiente, para criar um gradiente usamos a propriedade background-image com o valor linear-gradient que recebe como parâmetro as cores inicial e final, se não receber um valor para o angulo o padrão será um gradiente horizontal;  
 por fim adicionamos o media query para editar o display do container de flex para block, o width da imagem de um tamanho fixo para 100% do container e um ajuste nas margens dos detalhes da palestra;  
 até aqui vai o quarto commit.
+### Aula 05 - Crie a descrição e organização do evento
+#### **Sobre a aula**
+* compreender a importância da organização do código para o projeto da landing page;
+* dominar a criação de variáveis CSS;
+* aplicar animações com bibliotecas externas.
+#### **Anotações**
+antes de criarmos as demais seções vamos organizar um pouco o código, colocando as cores em arquivos de variaveis e fazendo suas importações;  
+para aplicar as novas cores aos gradientes subsequentes criamos modificadores para cada seção, dessa forma podemos repetir o código e variar a estilização de acordo com o modificador, também utilizamos o modificador --image-left para a segunda e a quarta seção, invertendo o flex-direction, corrigimos a margem removendo a margin-left de details e substituindo-a pelo gap no .container;  
+vamos adicionar agora algumas animações ao nosso projeto, vamos utilizar a biblioteca AOS (Animate On Scroll); no github da mesma encontramos o link css para ser adicionado no head e também o link do script para ser adicionado no body, além disso precisamos ativá-lo em nosso arquivo main.js através do comando AOS.init();  
+podemos adicionar animações com o atributo data-aos='fade-right' ou 'fade-left', optamos por adicioná-las ao container e não as seções porque assim o fundo se mantem fixo e só o que desliza é o conteúdo;
+o quinto commit vai até aqui;    
