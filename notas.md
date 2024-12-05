@@ -51,3 +51,15 @@ quanto ao botão, vamos também remover o comportamento de wrap na propriedade w
 ao fazermos isso o texto se descentralizou verticalmente, então aplicamos o display flex para o media até 1024px e configuramos align-itens para center;
 faltou somente diminuir o espaço entre os itens no caso do tablet, então na media apropriada definimos o gap para a ul (__infos) para 16px;  
 o terceiro commit vai até aqui;
+### Aula 4 - Insira a imagem de destaque
+#### **Sobre a aula**
+* inserir imagens responsivas na landing page;
+* aplicar gradientes de fundo em elementos HTML usando CSS;
+* melhorar a responsividade do layout da lading page.
+#### **Anotações**
+Vamos agora construir as sessões dos conteúdos do nosso evento, consiste de um título, um paragrafo e uma imagem na direita;  
+vamos primeiro criar a seção event no html, ela vai conter um container, dentro desse uma div para o texto, que chamaremos de event__details que vai ter um titulo, event__details__title e um paragrafo, event__details__description, paralelo a essa div teremos a imagem, dessa forma, no arquivo novo _event.scss definimos que .container em .event vai ter display flex, para que a div e a img se organizem lado a lado;  
+em seguida vamos ajustar os tamanhos e os espaçamentos de acordo com o figma;  
+do figma também extraímos as cores do gradiente, para criar um gradiente usamos a propriedade background-image com o valor linear-gradient que recebe como parâmetro as cores inicial e final, se não receber um valor para o angulo o padrão será um gradiente horizontal;  
+por fim adicionamos o media query para editar o display do container de flex para block, o width da imagem de um tamanho fixo para 100% do container e um ajuste nas margens dos detalhes da palestra;  
+até aqui vai o quarto commit.
