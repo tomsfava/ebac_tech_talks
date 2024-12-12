@@ -73,4 +73,25 @@ antes de criarmos as demais seções vamos organizar um pouco o código, colocan
 para aplicar as novas cores aos gradientes subsequentes criamos modificadores para cada seção, dessa forma podemos repetir o código e variar a estilização de acordo com o modificador, também utilizamos o modificador --image-left para a segunda e a quarta seção, invertendo o flex-direction, corrigimos a margem removendo a margin-left de details e substituindo-a pelo gap no .container;  
 vamos adicionar agora algumas animações ao nosso projeto, vamos utilizar a biblioteca AOS (Animate On Scroll); no github da mesma encontramos o link css para ser adicionado no head e também o link do script para ser adicionado no body, além disso precisamos ativá-lo em nosso arquivo main.js através do comando AOS.init();  
 podemos adicionar animações com o atributo data-aos='fade-right' ou 'fade-left', optamos por adicioná-las ao container e não as seções porque assim o fundo se mantem fixo e só o que desliza é o conteúdo;
-o quinto commit vai até aqui;    
+o quinto commit vai até aqui.  
+### Aula 06 - Insira o botão de compra do ingresso
+#### **Sobre a aula**
+* compreender o uso da função getTime;
+* aplicar a função setInterval e clearInterval;
+* criar uma contagem regressiva funconal para a landing page.
+#### **Anotações**
+Vamos construir agora a contagem regressiva para a data do evento, para isso vamos ter que aprender a lidar com datas no JS, toda linguagem de programação tem um tipo de dado data, com isso podemos fazer manipulações, no caso a diferença entre a data do evento e a data atual;  
+no console, para 'pegar' a data atual, criamos uma *var* hoje = new Date(), essa variável vai armazenar a data e a hora na qual a variável é criada; podemos manipular essa variável com a função getFullYear() e com a função getMonth() além de outras funções, entre elas a função getTime() que usaremos nesse projeto; 
+aplicando a função getTime() a variável hoje o resultado é um time stamp, um número com 13 digitos, esse número representa a data a partir de alguns cálculos, e ele é único, nele estão embutidos tanto o dia quanto a hora, quanto o ano, quanto os minutos. uma time stamp pode ser subtraída da outra o resultado será em milissegundos;  
+conhecendo então o funcionamento da funçao getTime() vamos remover do HTML a contagem ficticia e adicioar em seu lugar um span com o id #contador;  
+agora vamos ao main.js e criar uma constante *const* dataDoEvento que vai conter new Date("Dec 12, 2024 19:00:00);  
+em seguida vamos recuperar o timeStamp desse momento no futuro que definimos na constante;  
+faremos isso criando uma nova *const* timeStampDoEvento = dataDoEvento.getTime();  
+agora vamos aprender uma nova função JS que é para trabalhar com intervalos, porque cada segundo que se passar a gente vai ter que verificar quanto tempo falta para chegarmos a data do evento;  
+setInterval(function(){
+    console.log('olá')
+},1000);  
+ou seja, a função setInterval recebe dois argumentos, a função a ser executada e o intervalo entre as execuções;  
+para interromper a execução precisamos armazenar a função setInterval dentro de uma variável e depois chamar a função clearInterval(nomeDaVariavel);
+no contexto do nosso projeto vamos criar a *const* contaAsHoras que vai ser setInterval com a função que contem uma *const* agora = new Date();, uma *const* timeStampAtual = agora.getTime(); e por fim uma *const* tempoAteOEvento = timeStampDoEvento - timeStampAtual; essa função vai rodar num intervalo de 1000 milissegundos;  
+
