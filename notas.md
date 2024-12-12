@@ -94,4 +94,13 @@ setInterval(function(){
 ou seja, a função setInterval recebe dois argumentos, a função a ser executada e o intervalo entre as execuções;  
 para interromper a execução precisamos armazenar a função setInterval dentro de uma variável e depois chamar a função clearInterval(nomeDaVariavel);
 no contexto do nosso projeto vamos criar a *const* contaAsHoras que vai ser setInterval com a função que contem uma *const* agora = new Date();, uma *const* timeStampAtual = agora.getTime(); e por fim uma *const* tempoAteOEvento = timeStampDoEvento - timeStampAtual; essa função vai rodar num intervalo de 1000 milissegundos;  
+ainda dentro da função vamos quebrar a *const* tempoAteOEvento em 4 *const* uma para cada contador: dias, horas, minutos e segundos, essas *const* são compostas do seguinte cálculo: tempoAteOEvento / conversão de milissegundos para dia, arredondado pra baixo, depois o tempoAteOEvento % conversão de milissegundos para dia / conversão de milissegundos para hora, depois tempoAteOEvento % conversão de milissegundos para hora / conversão de milissegundos para minuto, por fim tempoAteOEvento % conversão de milissegundos para minutos / conversão de milissegundos para segundo, todas arredondadas para baixo através do Math.floor();  
+definimos também 4 console.log para cada *const*, dessa forma, contaAsHoras retora a cada segundo a quantidade de dias, horas, minutos e segundos faltando para o evento;  
+para inserir essas informações no HTML basta adicionar no final da função a sentença: document.getElementById("contador").innerHTML = ``;  
+dentro das crases chamamos as *const* através do ${} e voilá;  
+também adicionamos um if para o tempoAteOEvento < 0, esse if contem o clearInterval (contaAsHoras) e outro document.innerHTML = "evento expirado";  
+completo o desenvolvimento da página vamos preparar os arquivos para a vercel;  
+para isso necessitamos apenas configurar o script "build" no package.json com o conteúdo: "parcel build src.index.html", nota-se que o parcel por ser inteligente somente apontando para o arquivo html ele vai trabalhar com todas as dependencias;  
+ao rodar npm run build havia um erro já que no package.json "main" apontava para "index.js" que não existia, removemos a propriedade "main" e assim o script rodou normalmente;  
+
 
